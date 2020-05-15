@@ -15,8 +15,15 @@
 mas my_jacamo_project {
 
     agent sample_agent
-
     
-
+    agent communicating_agent:communicating_agent.asl{
+    	focus: integration
+    }
+    
+	workspace wp{
+		artifact integration:br.pucrs.smart.IntegrationArtifact
+	}
+	
+	platform: br.pucrs.smart.RestArtifact("--main 2181 --restPort 8080")
 }
 
